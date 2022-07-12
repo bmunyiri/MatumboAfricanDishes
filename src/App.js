@@ -1,6 +1,7 @@
 import "./styles.css";
 import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 
+
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -10,21 +11,28 @@ import NotFoundPage from "./NotFoundPage";
 
 export default function App() {
   return (
+ <> 
     <BrowserRouter>
-      <div>
-        <Link to="/" className="link">
+   <nav className="navbar is-warning">
+   <img className="navbar-brand" src="/Matumbo.jpg  " alt=""  width="50px" height="50px" />
+          <Link to="/" className="navbar-item">
           Home
         </Link>
-        <Link to="/about" className="link">
+        <hr navbar-divider />
+        <Link to="/about" className="navbar-item">
           About
         </Link>
-        <Link to="/contact" className="link">
+         <hr navbar-divider />
+        <Link to="/contact" className="navbar-item">
           Contact
         </Link>
-        <Link to="/oblivion" className="link">
+         <hr navbar-divider />
+        <Link to="/oblivion" className="navbar-item">
           Oblivion
         </Link>
-      </div>
+         <hr navbar-divider />
+
+ </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -36,5 +44,6 @@ export default function App() {
         <Route path="*" element={<Navigate replace to="/404" />} />
       </Routes>
     </BrowserRouter>
+  </>
   );
 }
